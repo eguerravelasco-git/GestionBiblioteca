@@ -5,6 +5,8 @@
  */
 package clases;
 
+import java.util.Date;
+
 /**
  *
  * @author Computador01
@@ -17,13 +19,13 @@ public class bibliografia {
   private String materiaBibliografia;
   private String editorialBibliografia;
   private String edicionBibliografia;
-  private String fechaPublicacion;
+  private Date fechaPublicacion;
   private double valoracionBibliografia;
 
     public bibliografia() {
     }
 
-    public bibliografia(int idBibliografia, tBibliografia idTBibliografia, String tituloBibliografia, String autorBibliografia, String materiaBibliografia, String editorialBibliografia, String edicionBibliografia, String fechaPublicacion, double valoracionBibliografia) {
+    public bibliografia(int idBibliografia, tBibliografia idTBibliografia, String tituloBibliografia, String autorBibliografia, String materiaBibliografia, String editorialBibliografia, String edicionBibliografia, Date fechaPublicacion, double valoracionBibliografia) {
         this.idBibliografia = idBibliografia;
         this.idTBibliografia = idTBibliografia;
         this.tituloBibliografia = tituloBibliografia;
@@ -91,11 +93,11 @@ public class bibliografia {
         this.edicionBibliografia = edicionBibliografia;
     }
 
-    public String getFechaPublicacion() {
+    public Date getFechaPublicacion() {
         return fechaPublicacion;
     }
 
-    public void setFechaPublicacion(String fechaPublicacion) {
+    public void setFechaPublicacion(Date fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
 
@@ -106,6 +108,7 @@ public class bibliografia {
     public void setValoracionBibliografia(double valoracionBibliografia) {
         this.valoracionBibliografia = valoracionBibliografia;
     }
+
   
-  
-}
+
+    }
