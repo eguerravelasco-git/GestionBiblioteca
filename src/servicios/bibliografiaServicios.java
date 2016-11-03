@@ -115,7 +115,7 @@ public class bibliografiaServicios {
         return lst;
     }
 
-    public static bibliografia obtenerDocumentoDadoCodigo(int codigo) throws Exception {
+    public static bibliografia obtenerBibliografiaDadoCodigo(int codigo) throws Exception {
         bibliografia objBibliografia = new bibliografia();
         try {
             String sql = "SELECT id_bibliografia,id_tipo_bibliografia,titulo_bibliografia,autor_bibliografia,materia_bibliografia,editorial_bibliografia,edicion_bibliografia,fecha_publicacion,valoracion_bibliografia FROM public.bibliografia WHERE id_bibliografia = ?";

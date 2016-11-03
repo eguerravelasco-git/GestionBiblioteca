@@ -23,6 +23,17 @@ public class prestamos {
     public prestamos() {
     }
 
+    public prestamos(int idPrestamos, persona idPersona, bibliografia idBibliografia, Date fecha_retiro, boolean devolucion, String observaciones) {
+        this.idPrestamos = idPrestamos;
+        this.idPersona = idPersona;
+        this.idBibliografia = idBibliografia;
+        this.fecha_retiro = fecha_retiro;
+        this.devolucion = devolucion;
+        this.observaciones = observaciones;
+    }
+    
+    
+
     public int getIdPrestamos() {
         return idPrestamos;
     }

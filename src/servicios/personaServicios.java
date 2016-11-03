@@ -45,7 +45,7 @@ public class personaServicios {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "UPDATE public.persona SET id_tipo_persona=?, SET id_tipo_lector=?, SET cedula_persona=?, SET nombres_persona=?, SET apellidos_persona=?, SET direccion_persona=?, SET telefono_persona=?, SET correo_electronico =? WHERE id_tipo_persona = ?";
+            String sql = "UPDATE public.persona SET id_tipo_lector=?, SET cedula_persona=?, SET nombres_persona=?, SET apellidos_persona=?, SET direccion_persona=?, SET telefono_persona=?, SET correo_electronico =? WHERE id_tipo_persona = ?";
             lstP.add(new Parametro(1, persona.getIdLector().getIdLector()));
             lstP.add(new Parametro(2, persona.getCedulaPersona()));
             lstP.add(new Parametro(3, persona.getNombresPersona()));
@@ -114,7 +114,7 @@ public class personaServicios {
         return lst;
     }
 
-    public static persona obtenerDocumentoDadoCodigo(int codigo) throws Exception {
+    public static persona obtenerPersonaDadoCodigo(int codigo) throws Exception {
         persona objPersona = new persona();
         try {
             String sql = "SELECT id_tipo_persona,id_tipo_lector,cedula_persona,nombres_persona,apellidos_persona,direccion_persona,telefono_persona,correo_electronico FROM public.persona WHERE id_persona = ?";
