@@ -16,6 +16,10 @@ public class GestionBiblioteca {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        frmLector lector = new frmLector();
+        lector.setVisible(true);
+        lector.setEnabled(true);
+        lector.show();
     }
     
 }

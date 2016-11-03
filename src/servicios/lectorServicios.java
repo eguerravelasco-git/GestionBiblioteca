@@ -19,16 +19,16 @@ import java.util.ArrayList;
 public class lectorServicios {
     
     public static boolean insertar(lector lector) throws Exception {
-        boolean eje = false;
+        boolean eje=false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = " INSERT INTO public.tipo_lector (decripcion_lector) VALUES(?)";
-            lstP.add(new Parametro(1, lector.getDescripcion()));
-            
+            String sql = "select * from public.f_insert_tipo_lector(?)";
+//            String sql = "INSERT INTO public.tipo_lector (descripcion_lector) VALUES(?)";
+            lstP.add(new Parametro(1, lector.getDescripcion()));            
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {
-                if (rs.getString(0).equals("true"));
-                eje = true;
+                if (rs.getString(0).isEmpty());
+                eje=true;
             }
         } catch (SQLException exConec) {
             throw new Exception(exConec.getMessage());
@@ -40,7 +40,7 @@ public class lectorServicios {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "UPDATE public.tipo_lector SET  decripcion_lector = ? WHERE id_tipo_lector = ?";
+            String sql = "UPDATE public.tipo_lector SET  descripcion_lector = ? WHERE id_tipo_lector = ?";
              lstP.add(new Parametro(1, lector.getDescripcion()));
              lstP.add(new Parametro(2, lector.getIdLector()));
              
