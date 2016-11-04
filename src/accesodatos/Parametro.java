@@ -7,9 +7,10 @@ package accesodatos;
 
 /**
  *
- * @author DIEGO_PALACIOS
+ * @author Usuario
  */
 public class Parametro {
+
     private int posicion;
     private Object valor;
     private int tipo;
@@ -21,18 +22,15 @@ public class Parametro {
     public void setTipo(int tipo) {
         this.tipo = tipo;
     }
-    
-    
-    public Parametro()
-    {
-    posicion=0;
-    valor= null;
+
+    public Parametro() {
+        posicion = 0;
+        valor = null;
     }
 
-    public Parametro(int posicion, Object valor)
-    {
-    this.posicion=posicion;
-    this.valor= valor;
+    public Parametro(int posicion, Object valor) {
+        this.posicion = posicion;
+        this.valor = valor;
     }
 
     public Parametro(int posicion, Object valor, int tipo) {
@@ -70,7 +68,5 @@ public class Parametro {
     public void setValor(Object valor) {
         this.valor = valor;
     }
-    
-
 
 }

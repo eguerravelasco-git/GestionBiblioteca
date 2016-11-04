@@ -5,31 +5,33 @@
 package accesodatos;
 /**
  *
- * @author root
+ * @author Usuario
  */
 public final  class Global {
 
      java.util.ResourceBundle Configuracion = java.util.ResourceBundle.getBundle("accesodatos.database");
-    //public final static String PASS="sisepecdesitel2010";
+    
     private String URL=Configuracion.getString("url");
     private String DRIVER = Configuracion.getString("driver");
     private String USER = Configuracion.getString("user");
     private String PASS = Configuracion.getString("password");
+    
+    //pool de conexiones
+    private String JDNI = Configuracion.getString("jdni");
 
-    //Mails
-    public final static String SISEPECMASTERMAIL = "sisepec@espoch.edu.ec";
-    public final static String BUZONSECRETARIAMAIL = "epec@espoch.edu.ec";
-
+    
     //Mensajes de error
     public final static String MENSAJEERRORDATOS = "Error al procesar la solicitud, revise los datos";
     public final static String MENSAJEERRORSESION = "Su sesi&oacute;n ha caducado, reinicie sesi&oacute;n ";
     public final static String MENSAJEERRORCLAVES = "Las claves no coinciden";
 
-    //Direcciones
-    public final static String DOMINIO="http://sisepec.espoch.edu.ec/";
+    public String getJDNI() {
+        return JDNI;
+    }
 
-    //PublicacionesNoticias
-    public final static int CANTIDADNOTICIASPAGINACION=10;
+    public void setJDNI(String JDNI) {
+        this.JDNI = JDNI;
+    }
 
     /**
      * @return the URL

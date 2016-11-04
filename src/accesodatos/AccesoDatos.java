@@ -6,102 +6,14 @@ package accesodatos;
 
 import java.sql.*;
 import java.util.ArrayList;
+import javax.naming.*;
+import javax.sql.DataSource;
 
 /**
  *
  * @author Dada
  */
 public class AccesoDatos {
-////para obtener filas afectadas
-
-    public static boolean ejecutaComando1(String comando, ArrayList<Parametro> parametros) throws Exception {
-        boolean respuesta = false;
-        PreparedStatement ptrs = null;
-        Connection con = null;
-
-        try {
-            Global global = new Global();
-            Class.forName(global.getDRIVER());
-            try {
-                con = DriverManager.getConnection(global.getURL(), global.getUSER(), global.getPASS());
-                ptrs = con.prepareStatement(comando);
-                for (Parametro parametro : parametros) {
-                    ptrs.setObject(parametro.getPosicion(), parametro.getValor());
-                }
-                int i = ptrs.executeUpdate();
-                if (i > 0) {
-                    respuesta = true;
-                }
-
-                ptrs.close();
-                ptrs = null;
-
-            } catch (SQLException exConec) {
-                throw exConec;
-            } finally {
-                try {
-                    if (con != null) {
-                        if (!(con.isClosed())) {
-                            con.close();
-                        }
-                        con = null;
-                    }
-                } catch (Exception ex) {
-                    throw ex;
-                }
-            }
-        } catch (ClassNotFoundException exCarga) {
-            throw exCarga;
-        }
-
-        return respuesta;
-    }
-
-    public static boolean ejecutaComando(String comando, ArrayList<Parametro> parametros) throws Exception {
-
-        boolean respuesta = false;
-        PreparedStatement ptrs = null;
-        Connection con = null;
-
-        try {
-            Global global = new Global();
-            Class.forName(global.getDRIVER());
-            try {
-                con = DriverManager.getConnection(global.getURL(), global.getUSER(), global.getPASS());
-                ptrs = con.prepareStatement(comando);
-                for (Parametro parametro : parametros) {
-                    ptrs.setObject(parametro.getPosicion(), parametro.getValor());
-                }
-                ResultSet rst = ptrs.executeQuery();
-                if (rst.next()) {
-                    String bandera = rst.getString(1);
-                    respuesta = bandera.equals("t") ? true : false;
-                }
-                rst.close();
-                ptrs.close();
-                rst = null;
-                ptrs = null;
-
-            } catch (SQLException exConec) {
-                throw exConec;
-            } finally {
-                try {
-                    if (con != null) {
-                        if (!(con.isClosed())) {
-                            con.close();
-                        }
-                        con = null;
-                    }
-                } catch (Exception ex) {
-                    throw ex;
-                }
-            }
-        } catch (ClassNotFoundException exCarga) {
-            throw exCarga;
-        }
-
-        return respuesta;
-    }
 
     public static ConjuntoResultado ejecutaQuery(String query) throws Exception {
 
@@ -113,6 +25,9 @@ public class AccesoDatos {
             Global global = new Global();
             Class.forName(global.getDRIVER());
             try {
+//                Context c = new InitialContext();
+//                DataSource ds = (DataSource) c.lookup(global.getJDNI());
+//                con = ds.getConnection();
                 con = DriverManager.getConnection(global.getURL(), global.getUSER(), global.getPASS());
                 pst = con.prepareStatement(query);
                 rs = pst.executeQuery();
@@ -151,17 +66,20 @@ public class AccesoDatos {
             Global global = new Global();
             Class.forName(global.getDRIVER());
             try {
+//                Context c = new InitialContext();
+//                DataSource ds = (DataSource) c.lookup(global.getJDNI());
+//                con = ds.getConnection();
                 String url = global.getURL();
                 con = DriverManager.getConnection(url, global.getUSER(), global.getPASS());
                 ptrs = con.prepareStatement(query);
                 for (Parametro parametro : parametros) {
-                  //  if (parametro.getTipo() == 0) {
-                        ptrs.setObject(parametro.getPosicion(), parametro.getValor());
+                    //  if (parametro.getTipo() == 0) {
+                    ptrs.setObject(parametro.getPosicion(), parametro.getValor());
 //                    } else {
 //                        ptrs.setObject(parametro.getPosicion(), parametro.getValor(), parametro.getTipo());
 //                    }
                 }
-             //   System.out.println(ptrs.toString());
+                //   System.out.println(ptrs.toString());
                 rs = ptrs.executeQuery();
                 conj.Fill(rs);
                 rs.close();

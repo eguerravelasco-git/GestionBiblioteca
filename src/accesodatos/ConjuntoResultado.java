@@ -12,7 +12,7 @@ import java.sql.*;
 
 /**
  *
- * @author Paul
+ * @author Uusario
  */
 public class ConjuntoResultado {
 
@@ -198,6 +198,22 @@ public class ConjuntoResultado {
     public java.sql.Time getTime(String nomCol) throws Exception {
         try {
             return (java.sql.Time) (this.Datos.get(indFil)[Find(nomCol)]);
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
+    public java.sql.Timestamp getTimeStamp(int nCol) throws Exception {
+        try {
+            return (java.sql.Timestamp) (this.Datos.get(indFil)[nCol]);
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
+    public java.sql.Timestamp getTimeStamp(String nomCol) throws Exception {
+        try {
+            return (java.sql.Timestamp) (this.Datos.get(indFil)[Find(nomCol)]);
         } catch (Exception e) {
             throw e;
         }

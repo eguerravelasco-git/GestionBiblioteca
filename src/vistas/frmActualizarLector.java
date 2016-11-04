@@ -54,6 +54,7 @@ public class frmActualizarLector extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         pnlLectores.setBackground(new java.awt.Color(102, 204, 255));
         pnlLectores.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LECTORES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Game of Thrones", 1, 12))); // NOI18N
@@ -63,6 +64,7 @@ public class frmActualizarLector extends javax.swing.JFrame {
         lbNombreLector.setText("Descripción");
 
         txtCodigo.setEditable(false);
+        txtCodigo.setEnabled(false);
 
         lbCodigo.setText("Código");
 
@@ -240,7 +242,9 @@ public class frmActualizarLector extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmActualizarLector().setVisible(true);
+                frmActualizarLector lector = new frmActualizarLector();
+                lector.setVisible(true);
+                lector.setLocationRelativeTo(null);
             }
         });
     }

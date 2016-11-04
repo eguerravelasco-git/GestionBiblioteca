@@ -22,7 +22,7 @@ public class personaServicios {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "INSERT INTO public.persona(id_tipo_lector,cedula_persona,nombres_persona,apellidos_persona,direccion_persona,telefono_persona,correo_electronico) VALUES(?,?,?,?,?,?,?)";
+            String sql = "select * from public.f_insert_persona(?,?,?,?,?,?,?)";
             lstP.add(new Parametro(1, persona.getIdLector().getIdLector()));
             lstP.add(new Parametro(2, persona.getCedulaPersona()));
             lstP.add(new Parametro(3, persona.getNombresPersona()));
@@ -45,16 +45,15 @@ public class personaServicios {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "UPDATE public.persona SET id_tipo_lector=?, SET cedula_persona=?, SET nombres_persona=?, SET apellidos_persona=?, SET direccion_persona=?, SET telefono_persona=?, SET correo_electronico =? WHERE id_tipo_persona = ?";
+            String sql = "select * from public.f_update_persona(?,?,?,?,?,?,?,?)";
             lstP.add(new Parametro(1, persona.getIdLector().getIdLector()));
-            lstP.add(new Parametro(2, persona.getCedulaPersona()));
-            lstP.add(new Parametro(3, persona.getNombresPersona()));
-            lstP.add(new Parametro(4, persona.getApellidosPersona()));
-            lstP.add(new Parametro(5, persona.getDireccionPersona()));
-            lstP.add(new Parametro(6, persona.getTelefonoPersona()));
-            lstP.add(new Parametro(7, persona.getCorreoElectronico()));
-            lstP.add(new Parametro(8, persona.getIdPersona()));
-
+            lstP.add(new Parametro(2, persona.getIdPersona()));
+            lstP.add(new Parametro(3, persona.getCedulaPersona()));
+            lstP.add(new Parametro(4, persona.getNombresPersona()));
+            lstP.add(new Parametro(5, persona.getApellidosPersona()));
+            lstP.add(new Parametro(6, persona.getDireccionPersona()));
+            lstP.add(new Parametro(7, persona.getTelefonoPersona()));
+            lstP.add(new Parametro(8, persona.getCorreoElectronico()));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {
                 if (rs.getString(0).equals("true"));
@@ -70,7 +69,7 @@ public class personaServicios {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "DELETE FROM public.persona WHERE id_tipo_persona = ?";
+            String sql = "select * from public.f_delete_persona(?)";
             lstP.add(new Parametro(1, persona.getIdPersona()));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {
@@ -88,10 +87,10 @@ public class personaServicios {
         persona Persona = null;
         try {
             while (rs.next()) {
-                Persona = new persona(rs.getInt("id_tipo_persona"),lectorServicios.obtenerLectorDadoCodigo(rs.getInt("id_tipo_lector")),
-                        rs.getString("cedula_persona"), rs.getString("nombres_persona"),
-                        rs.getString("apellidos_persona"), rs.getString("direccion_persona"),
-                        rs.getString("telefono_persona"), rs.getString("correo_electronico"));
+                Persona = new persona(rs.getInt("pid_tipo_persona"), lectorServicios.obtenerLectorDadoCodigo(rs.getInt("pid_tipo_lector")),
+                        rs.getString("pcedula_persona"), rs.getString("pnombres_persona"),
+                        rs.getString("papellidos_persona"), rs.getString("pdireccion_persona"),
+                        rs.getString("ptelefono_persona"), rs.getString("pcorreo_electronico"));
                 lst.add(Persona);
             }
         } catch (Exception e) {
@@ -104,7 +103,7 @@ public class personaServicios {
     public static ArrayList<persona> obtenerTodos() throws Exception {
         ArrayList<persona> lst = new ArrayList<persona>();
         try {
-            String sql = "SELECT id_tipo_persona,id_tipo_lector,cedula_persona,nombres_persona,apellidos_persona,direccion_persona,telefono_persona,correo_electronico FROM public.persona ORDER BY nombres_persona";
+            String sql = "SELECT * from public.f_select_persona()";
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql);
             lst = llenarPersona(rs);
             rs = null;
@@ -117,7 +116,7 @@ public class personaServicios {
     public static persona obtenerPersonaDadoCodigo(int codigo) throws Exception {
         persona objPersona = new persona();
         try {
-            String sql = "SELECT id_tipo_persona,id_tipo_lector,cedula_persona,nombres_persona,apellidos_persona,direccion_persona,telefono_persona,correo_electronico FROM public.persona WHERE id_persona = ?";
+            String sql = "SELECT * from public.f_select_persona_dado_id(?)";
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
             lstP.add(new Parametro(1, codigo));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
@@ -129,5 +128,4 @@ public class personaServicios {
         return objPersona;
     }
 
-    
 }

@@ -56,6 +56,7 @@ public class frmGuardarTipoBibliografia extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         pnlLectores.setBackground(new java.awt.Color(102, 204, 255));
         pnlLectores.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "TIPO BIBLIOGRAFIA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Game of Thrones", 1, 12))); // NOI18N
