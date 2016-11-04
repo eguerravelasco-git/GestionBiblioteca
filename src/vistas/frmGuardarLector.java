@@ -13,23 +13,23 @@ import servicios.lectorServicios;
  *
  * @author Usuario
  */
-public class frmLector extends javax.swing.JFrame {
+public class frmGuardarLector extends javax.swing.JFrame {
 
-    public frmLector() {
+    private lector objLector;
+
+    public frmGuardarLector() {
         this.objLector = new lector();
         initComponents();
     }
-
-    private lector objLector;
 
     public void insertarLector() {
 
         try {
             objLector.setDescripcion(txtNombreLector.getText());
-            System.out.println(lectorServicios.insertar(objLector));
+//            
             if (lectorServicios.insertar(objLector)) {
                 JOptionPane.showMessageDialog(null, "Datos Insertados Correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
-                this.objLector = new lector();
+//                
             } else {
                 JOptionPane.showMessageDialog(null, "Datos no Insertados ", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
@@ -92,6 +92,11 @@ public class frmLector extends javax.swing.JFrame {
         btnCancelar.setText("CANCELAR");
 
         btnRegresar.setText("REGRESAR");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
 
         btnSalir.setText("SALIR");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -174,6 +179,11 @@ public class frmLector extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnGuardarActionPerformed
 
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
     public static void main(String args[]) {
 
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -188,20 +198,21 @@ public class frmLector extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmLector.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmGuardarLector.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmLector.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmGuardarLector.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmLector.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmGuardarLector.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmLector.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmGuardarLector.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
 
-                frmLector lector = new frmLector();
+                frmGuardarLector lector = new frmGuardarLector();
                 lector.setVisible(true);
                 lector.setLocationRelativeTo(null);
             }

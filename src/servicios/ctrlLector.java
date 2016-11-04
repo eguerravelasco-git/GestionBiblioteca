@@ -8,7 +8,7 @@ package servicios;
 import clases.lector;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import vistas.frmLector;
+import vistas.frmGuardarLector;
 
 /**
  *

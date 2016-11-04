@@ -21,7 +21,7 @@ public class tBibliografiaServicios {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = " INSERT INTO public.tipo_bibliografia(nombre_bibliografia,descripcion_tipo_bibliografia) VALUES(?,?)";
+            String sql = "select * from public.f_insert_tipo_bibliografia(?,?)";
             lstP.add(new Parametro(1, tBibliografia.getNombreBibliografia()));
             lstP.add(new Parametro(2, tBibliografia.getDescripcionTBibliografia()));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
@@ -39,7 +39,7 @@ public class tBibliografiaServicios {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "UPDATE public.tipo_bibliografia SET  nombre_bibliografia =?, SET descripcion_tipo_bibliografia = ? WHERE id_tipo_bibliografia = ?";
+            String sql = "select * from public.f_update_tipo_bibliografia(?,?,?)";
              lstP.add(new Parametro(1, tBibliografia.getNombreBibliografia()));
             lstP.add(new Parametro(2, tBibliografia.getDescripcionTBibliografia()));
              lstP.add(new Parametro(3, tBibliografia.getIdTBibliografia()));
@@ -59,7 +59,7 @@ public class tBibliografiaServicios {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "DELETE FROM public.tipo_bibliografia WHERE id_tipo_bibliografia = ?";
+            String sql = "select * from public.f_delete_tipo_bibliografia(?)";
             lstP.add(new Parametro(1, tBibliografia.getIdTBibliografia()));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {
@@ -77,8 +77,8 @@ public class tBibliografiaServicios {
         tBibliografia TBibliografia = null;
         try {
             while (rs.next()) {
-                TBibliografia = new tBibliografia(rs.getInt("id_tipo_bibliografia"),
-                        rs.getString("nombre_bibliografia"),rs.getString("descripcion_tipo_bibliografia"));
+                TBibliografia = new tBibliografia(rs.getInt("pid_tipo_blibliografia"),
+                        rs.getString("pnombre_bibliografia"),rs.getString("pdescripcion_tipo_bibliografia"));
                 lst.add(TBibliografia);
             }
         } catch (Exception e) {
@@ -91,7 +91,7 @@ public class tBibliografiaServicios {
     public static ArrayList<tBibliografia> obtenerTodos() throws Exception {
         ArrayList<tBibliografia> lst = new ArrayList<tBibliografia>();
         try {
-            String sql = "SELECT id_tipo_bibliografia,nombre_bibliografia, descripcion_tipo_bibliografia FROM public.tipo_bibliografia ORDER BY nombre_bibliografia";
+            String sql = "SELECT * from public.f_select_tipo_bibliografia()";
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql);
             lst = llenarTipoBibliografia(rs);
             rs = null;
@@ -104,7 +104,7 @@ public class tBibliografiaServicios {
      public static tBibliografia obtenerDadoCodigo(int codigo) throws Exception {
         tBibliografia objTBibliografia = new tBibliografia();
         try {
-            String sql = "SELECT id_tipo_bibliografia,nombre_bibliografia, descripcion_tipo_bibliografia FROM public.tipo_bibliografia WHERE id_tipo_bibliografia = ?";
+            String sql = "SELECT * from public.f_select_tipo_bibliografia_dado_id(?)";
             ArrayList<Parametro> lstP = new ArrayList<Parametro>(); 
             lstP .add(new Parametro(1,codigo));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql,lstP);

@@ -23,7 +23,7 @@ public class lectorServicios {
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
             String sql = "select * from public.f_insert_tipo_lector(?)";
-//            String sql = "INSERT INTO public.tipo_lector (descripcion_lector) VALUES(?)";
+
             lstP.add(new Parametro(1, lector.getDescripcion()));            
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {
@@ -40,7 +40,7 @@ public class lectorServicios {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "UPDATE public.tipo_lector SET  descripcion_lector = ? WHERE id_tipo_lector = ?";
+            String sql = "select * from public.f_update_tipo_lector(?,?)";
              lstP.add(new Parametro(1, lector.getDescripcion()));
              lstP.add(new Parametro(2, lector.getIdLector()));
              
@@ -60,7 +60,7 @@ public class lectorServicios {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "DELETE FROM public.tipo_lector WHERE Id_Cliente = ?";
+            String sql = "select * from public.f_delete_tipo_lector(?)";
             lstP.add(new Parametro(1, lector.getIdLector()));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {
@@ -78,8 +78,8 @@ public class lectorServicios {
         lector Lector = null;
         try {
             while (rs.next()) {
-                Lector = new lector(rs.getInt("id_tipo_lector"),
-                        rs.getString("descripcion_lector"));
+                Lector = new lector(rs.getInt("pid_tipo_lector"),
+                        rs.getString("pdescripcion_lector"));
                 lst.add(Lector);
             }
         } catch (Exception e) {
@@ -92,7 +92,7 @@ public class lectorServicios {
     public static ArrayList<lector> obtenerTodos() throws Exception {
         ArrayList<lector> lst = new ArrayList<lector>();
         try {
-            String sql = "SELECT id_tipo_lector, descripcion_lector FROM public.tipo_lector ORDER BY descripcion_lector";
+            String sql = "SELECT * FROM public.f_select_tipo_lector()";
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql);
             lst = llenarLector(rs);
             rs = null;
@@ -105,7 +105,7 @@ public class lectorServicios {
      public static lector obtenerLectorDadoCodigo(int codigo) throws Exception {
         lector objLector = new lector();
         try {
-            String sql = "SELECT id_tipo_lector, descripcion_lector FROM public.tipo_lector WHERE id_tipo_lector = ?";
+            String sql = "SELECT * FROM public.f_select_tipo_lector_dado_id(?)";
             ArrayList<Parametro> lstP = new ArrayList<Parametro>(); 
             lstP .add(new Parametro(1,codigo));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql,lstP);
