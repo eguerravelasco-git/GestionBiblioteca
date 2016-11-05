@@ -2,113 +2,75 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Container class="javax.swing.JMenu" name="jMenu1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jMenu1"/>
-      </Properties>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="true"/>
-      </Layout>
-    </Container>
-    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
-      <Properties>
-        <Property name="name" type="java.lang.String" value="menuPrincipal" noResource="true"/>
-      </Properties>
+    <Menu class="javax.swing.JMenuBar" name="menuPrincipal">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu2">
+        <Menu class="javax.swing.JMenu" name="menArchivo">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Biblioteca"/>
+            <Property name="text" type="java.lang.String" value="Archivo"/>
           </Properties>
           <SubComponents>
-            <Menu class="javax.swing.JMenu" name="jMenu5">
+            <MenuItem class="javax.swing.JMenuItem" name="menSalir">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Prestamos"/>
-                <Property name="name" type="java.lang.String" value="prestamos" noResource="true"/>
+                <Property name="text" type="java.lang.String" value="Salir"/>
               </Properties>
-            </Menu>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menSalirActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu3">
+        <Menu class="javax.swing.JMenu" name="menGestion">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Registrar"/>
+            <Property name="text" type="java.lang.String" value="Gesti&#xf3;n"/>
           </Properties>
           <SubComponents>
-            <Menu class="javax.swing.JMenu" name="jMenu6">
+            <MenuItem class="javax.swing.JMenuItem" name="menBibliografia">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Material Bibliogr&#xe1;fico"/>
-                <Property name="name" type="java.lang.String" value="mBibliografico" noResource="true"/>
+                <Property name="text" type="java.lang.String" value="Bibliograf&#xed;a"/>
               </Properties>
-            </Menu>
-            <Menu class="javax.swing.JMenu" name="jMenu7">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menBibliografiaActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menLector">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Lectores"/>
-                <Property name="name" type="java.lang.String" value="lectores" noResource="true"/>
+                <Property name="text" type="java.lang.String" value="Lector"/>
               </Properties>
-            </Menu>
-            <Menu class="javax.swing.JMenu" name="jMenu8">
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menTBibliografia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tipo Bibliograf&#xed;a"/>
-                <Property name="name" type="java.lang.String" value="tBibliografia" noResource="true"/>
               </Properties>
-            </Menu>
-            <Menu class="javax.swing.JMenu" name="jMenu9">
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menTLector">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Tipo Lectores"/>
-                <Property name="name" type="java.lang.String" value="tLectores" noResource="true"/>
+                <Property name="text" type="java.lang.String" value="Tipo Lector"/>
               </Properties>
-            </Menu>
+            </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu4">
+        <Menu class="javax.swing.JMenu" name="menPrestamos">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Listar"/>
+            <Property name="text" type="java.lang.String" value="Prestamos"/>
           </Properties>
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
-          </AccessibilityProperties>
-          <SubComponents>
-            <Menu class="javax.swing.JMenu" name="jMenu10">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Material Bibliogr&#xe1;fico"/>
-                <Property name="name" type="java.lang.String" value="lstMBibliografico" noResource="true"/>
-              </Properties>
-            </Menu>
-            <Menu class="javax.swing.JMenu" name="jMenu11">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Lectores"/>
-                <Property name="name" type="java.lang.String" value="lstLectores" noResource="true"/>
-              </Properties>
-            </Menu>
-            <Menu class="javax.swing.JMenu" name="jMenu12">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Tipo Bibliograf&#xed;a"/>
-                <Property name="name" type="java.lang.String" value="lstTBibliografia" noResource="true"/>
-              </Properties>
-            </Menu>
-            <Menu class="javax.swing.JMenu" name="jMenu13">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Tipo Lectores"/>
-                <Property name="name" type="java.lang.String" value="lstTLectores" noResource="true"/>
-              </Properties>
-            </Menu>
-          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="menAcercaDe">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Acerca de"/>
+          </Properties>
         </Menu>
       </SubComponents>
     </Menu>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="ff" green="99" red="66" type="rgb"/>
-    </Property>
-    <Property name="name" type="java.lang.String" value="frmPrincipal" noResource="true"/>
+    <Property name="undecorated" type="boolean" value="true"/>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1200, 720]"/>
+      <Dimension value="[1280, 700]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="menuPrincipal"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
@@ -127,12 +89,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="1200" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="1280" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="699" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="700" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>

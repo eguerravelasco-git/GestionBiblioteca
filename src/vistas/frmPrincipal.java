@@ -27,94 +27,87 @@ public class frmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenu1 = new javax.swing.JMenu();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
-        jMenu8 = new javax.swing.JMenu();
-        jMenu9 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu10 = new javax.swing.JMenu();
-        jMenu11 = new javax.swing.JMenu();
-        jMenu12 = new javax.swing.JMenu();
-        jMenu13 = new javax.swing.JMenu();
-
-        jMenu1.setText("jMenu1");
+        menuPrincipal = new javax.swing.JMenuBar();
+        menArchivo = new javax.swing.JMenu();
+        menSalir = new javax.swing.JMenuItem();
+        menGestion = new javax.swing.JMenu();
+        menBibliografia = new javax.swing.JMenuItem();
+        menLector = new javax.swing.JMenuItem();
+        menTBibliografia = new javax.swing.JMenuItem();
+        menTLector = new javax.swing.JMenuItem();
+        menPrestamos = new javax.swing.JMenu();
+        menAcercaDe = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(102, 153, 255));
-        setName("frmPrincipal"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(1200, 720));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1280, 700));
 
-        jMenuBar1.setName("menuPrincipal"); // NOI18N
+        menArchivo.setText("Archivo");
 
-        jMenu2.setText("Biblioteca");
+        menSalir.setText("Salir");
+        menSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menSalirActionPerformed(evt);
+            }
+        });
+        menArchivo.add(menSalir);
 
-        jMenu5.setText("Prestamos");
-        jMenu5.setName("prestamos"); // NOI18N
-        jMenu2.add(jMenu5);
+        menuPrincipal.add(menArchivo);
 
-        jMenuBar1.add(jMenu2);
+        menGestion.setText("Gestión");
 
-        jMenu3.setText("Registrar");
+        menBibliografia.setText("Bibliografía");
+        menBibliografia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menBibliografiaActionPerformed(evt);
+            }
+        });
+        menGestion.add(menBibliografia);
 
-        jMenu6.setText("Material Bibliográfico");
-        jMenu6.setName("mBibliografico"); // NOI18N
-        jMenu3.add(jMenu6);
+        menLector.setText("Lector");
+        menGestion.add(menLector);
 
-        jMenu7.setText("Lectores");
-        jMenu7.setName("lectores"); // NOI18N
-        jMenu3.add(jMenu7);
+        menTBibliografia.setText("Tipo Bibliografía");
+        menGestion.add(menTBibliografia);
 
-        jMenu8.setText("Tipo Bibliografía");
-        jMenu8.setName("tBibliografia"); // NOI18N
-        jMenu3.add(jMenu8);
+        menTLector.setText("Tipo Lector");
+        menGestion.add(menTLector);
 
-        jMenu9.setText("Tipo Lectores");
-        jMenu9.setName("tLectores"); // NOI18N
-        jMenu3.add(jMenu9);
+        menuPrincipal.add(menGestion);
 
-        jMenuBar1.add(jMenu3);
+        menPrestamos.setText("Prestamos");
+        menuPrincipal.add(menPrestamos);
 
-        jMenu4.setText("Listar");
+        menAcercaDe.setText("Acerca de");
+        menuPrincipal.add(menAcercaDe);
 
-        jMenu10.setText("Material Bibliográfico");
-        jMenu10.setName("lstMBibliografico"); // NOI18N
-        jMenu4.add(jMenu10);
-
-        jMenu11.setText("Lectores");
-        jMenu11.setName("lstLectores"); // NOI18N
-        jMenu4.add(jMenu11);
-
-        jMenu12.setText("Tipo Bibliografía");
-        jMenu12.setName("lstTBibliografia"); // NOI18N
-        jMenu4.add(jMenu12);
-
-        jMenu13.setText("Tipo Lectores");
-        jMenu13.setName("lstTLectores"); // NOI18N
-        jMenu4.add(jMenu13);
-
-        jMenuBar1.add(jMenu4);
-        jMenu4.getAccessibleContext().setAccessibleDescription("");
-
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(menuPrincipal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1200, Short.MAX_VALUE)
+            .addGap(0, 1280, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 699, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menSalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_menSalirActionPerformed
+
+    private void menBibliografiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menBibliografiaActionPerformed
+        // TODO add your handling code here:
+        frmListarBibliografia biblio = new frmListarBibliografia();
+        biblio.setVisible(true);
+        biblio.setLocationRelativeTo(null);
+    }//GEN-LAST:event_menBibliografiaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,25 +139,23 @@ public class frmPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmPrincipal().setVisible(true);
+                frmPrincipal frm = new frmPrincipal();
+                frm.setVisible(true);
+                frm.setLocationRelativeTo(null);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu10;
-    private javax.swing.JMenu jMenu11;
-    private javax.swing.JMenu jMenu12;
-    private javax.swing.JMenu jMenu13;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu8;
-    private javax.swing.JMenu jMenu9;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu menAcercaDe;
+    private javax.swing.JMenu menArchivo;
+    private javax.swing.JMenuItem menBibliografia;
+    private javax.swing.JMenu menGestion;
+    private javax.swing.JMenuItem menLector;
+    private javax.swing.JMenu menPrestamos;
+    private javax.swing.JMenuItem menSalir;
+    private javax.swing.JMenuItem menTBibliografia;
+    private javax.swing.JMenuItem menTLector;
+    private javax.swing.JMenuBar menuPrincipal;
     // End of variables declaration//GEN-END:variables
 }
