@@ -65,6 +65,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         menGestion.add(menBibliografia);
 
         menLector.setText("Lector");
+        menLector.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menLectorActionPerformed(evt);
+            }
+        });
         menGestion.add(menLector);
 
         menTBibliografia.setText("Tipo Bibliografía");
@@ -108,6 +113,13 @@ public class frmPrincipal extends javax.swing.JFrame {
         biblio.setVisible(true);
         biblio.setLocationRelativeTo(null);
     }//GEN-LAST:event_menBibliografiaActionPerformed
+
+    private void menLectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menLectorActionPerformed
+        // TODO add your handling code here:
+        frmListarPersonas frmpersonas =new frmListarPersonas();
+        frmpersonas.setVisible(true);
+        frmpersonas.setLocationRelativeTo(null);
+    }//GEN-LAST:event_menLectorActionPerformed
 
     /**
      * @param args the command line arguments
