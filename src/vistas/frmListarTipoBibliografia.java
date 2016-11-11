@@ -13,10 +13,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import servicios.tBibliografiaServicios;
 
-/**
- *
- * @author Usuario
- */
+
 public class frmListarTipoBibliografia extends javax.swing.JFrame {
 
     private tBibliografia tBibliografiaSel;

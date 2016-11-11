@@ -7,10 +7,6 @@ package clases;
 
 import java.util.Date;
 
-/**
- *
- * @author Computador01
- */
 public class bibliografia {
   private int idBibliografia;
   private tBibliografia idTBibliografia; 

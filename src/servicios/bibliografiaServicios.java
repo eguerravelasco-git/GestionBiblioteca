@@ -12,10 +12,7 @@ import clases.bibliografia;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- *
- * @author Usuario
- */
+
 public class bibliografiaServicios {
     public static boolean insertar(bibliografia bibliografia) throws Exception {
         boolean eje = false;

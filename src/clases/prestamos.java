@@ -7,10 +7,7 @@ package clases;
 
 import java.util.Date;
 
-/**
- *
- * @author Computador01
- */
+
 public class prestamos {
 
     private int idPrestamos;

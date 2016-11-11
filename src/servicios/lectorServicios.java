@@ -12,10 +12,7 @@ import clases.lector;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- *
- * @author Usuario
- */
+
 public class lectorServicios {
     
     public static boolean insertar(lector lector) throws Exception {

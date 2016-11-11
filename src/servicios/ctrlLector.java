@@ -10,10 +10,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import vistas.frmGuardarLector;
 
-/**
- *
- * @author Usuario
- */
+
 public class ctrlLector {
 
     private lector objLector;

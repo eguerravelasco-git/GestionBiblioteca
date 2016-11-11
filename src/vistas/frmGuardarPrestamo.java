@@ -17,10 +17,7 @@ import servicios.bibliografiaServicios;
 import servicios.personaServicios;
 import servicios.prestamosServicio;
 
-/**
- *
- * @author Usuario
- */
+
 public class frmGuardarPrestamo extends javax.swing.JFrame {
 
     private prestamos objPrestamo;

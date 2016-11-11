@@ -10,10 +10,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.sql.*;
 
-/**
- *
- * @author Uusario
- */
+
 public class ConjuntoResultado {
 
     private String[] cabecera;

@@ -9,10 +9,7 @@ import clases.lector;
 import javax.swing.JOptionPane;
 import servicios.lectorServicios;
 
-/**
- *
- * @author Usuario
- */
+
 public class frmActualizarLector extends javax.swing.JFrame {
     private lector lectorSel;
 

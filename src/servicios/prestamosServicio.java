@@ -12,10 +12,7 @@ import clases.prestamos;
 import java.sql.SQLException;
 import java.util.*;
 
-/**
- *
- * @author Usuario
- */
+
 public class prestamosServicio {
     public static boolean insertar(prestamos prestamos) throws Exception {
         boolean eje = false;

@@ -16,10 +16,7 @@ import servicios.lectorServicios;
 import servicios.personaServicios;
 import servicios.tBibliografiaServicios;
 
-/**
- *
- * @author Usuario
- */
+
 public class frmGuardarBibliografia extends javax.swing.JFrame {
 
     private bibliografia objBibliografia;

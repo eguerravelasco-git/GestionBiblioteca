@@ -5,10 +5,7 @@
  */
 package clases;
 
-/**
- *
- * @author Computador01
- */
+
 public class persona {
 
     private int idPersona;

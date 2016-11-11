@@ -13,10 +13,7 @@ import javax.swing.JOptionPane;
 import servicios.lectorServicios;
 import servicios.personaServicios;
 
-/**
- *
- * @author Usuario
- */
+
 
 public class frmActualizarPersona extends javax.swing.JFrame{
     private persona personaSel;

@@ -12,10 +12,7 @@ import clases.persona;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- *
- * @author Usuario
- */
+
 public class personaServicios {
 
     public static boolean insertar(persona persona) throws Exception {

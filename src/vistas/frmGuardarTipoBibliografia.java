@@ -9,10 +9,7 @@ import clases.tBibliografia;
 import javax.swing.JOptionPane;
 import servicios.tBibliografiaServicios;
 
-/**
- *
- * @author Usuario
- */
+
 public class frmGuardarTipoBibliografia extends javax.swing.JFrame {
 
     private tBibliografia objtBibliografia;

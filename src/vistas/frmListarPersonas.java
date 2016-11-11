@@ -13,10 +13,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import servicios.personaServicios;
 
-/**
- *
- * @author Usuario
- */
+
 public class frmListarPersonas extends javax.swing.JFrame {
 
     private persona personaSel;

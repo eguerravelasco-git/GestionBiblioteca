@@ -5,10 +5,7 @@
 
 package accesodatos;
 
-/**
- *
- * @author Usuario
- */
+
 public class Parametro {
 
     private int posicion;

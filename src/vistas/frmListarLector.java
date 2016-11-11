@@ -13,10 +13,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import servicios.lectorServicios;
 
-/**
- *
- * @author Usuario
- */
+
 public class frmListarLector extends javax.swing.JFrame {
 
     private ArrayList<lector> lstLectores;

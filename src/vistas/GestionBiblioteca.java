@@ -5,10 +5,7 @@
  */
 package vistas;
 
-/**
- *
- * @author Computador01
- */
+
 public class GestionBiblioteca {
 
     /**

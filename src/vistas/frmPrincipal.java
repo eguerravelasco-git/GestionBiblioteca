@@ -5,10 +5,7 @@
  */
 package vistas;
 
-/**
- *
- * @author Usuario
- */
+
 public class frmPrincipal extends javax.swing.JFrame {
 
     /**

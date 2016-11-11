@@ -14,10 +14,7 @@ import servicios.StringToDate;
 import servicios.bibliografiaServicios;
 import servicios.tBibliografiaServicios;
 
-/**
- *
- * @author Usuario
- */
+
 public class frmActualizarBibliografia extends javax.swing.JFrame {
 
     private bibliografia objBibliografia;

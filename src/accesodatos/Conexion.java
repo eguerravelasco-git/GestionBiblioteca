@@ -6,10 +6,7 @@ package accesodatos;
 
 import java.sql.*;
 
-/**
- *
- * @author Usuario
- */
+
 public class Conexion {
 
     private String driver;

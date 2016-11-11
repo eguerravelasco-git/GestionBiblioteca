@@ -7,10 +7,6 @@ package servicios;
 
 import java.util.Date;
 
-/**
- *
- * @author Edison Guerra feat Geovanny Cudco
- */
 public class StringToDate {
 
     public static java.sql.Date devolverFecha(Date txtFecha) {

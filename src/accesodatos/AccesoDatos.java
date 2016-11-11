@@ -9,10 +9,7 @@ import java.util.ArrayList;
 import javax.naming.*;
 import javax.sql.DataSource;
 
-/**
- *
- * @author Dada
- */
+
 public class AccesoDatos {
 
     public static ConjuntoResultado ejecutaQuery(String query) throws Exception {

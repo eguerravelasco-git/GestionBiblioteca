@@ -3,10 +3,7 @@
  * and open the template in the editor.
  */
 package accesodatos;
-/**
- *
- * @author Usuario
- */
+
 public final  class Global {
 
      java.util.ResourceBundle Configuracion = java.util.ResourceBundle.getBundle("accesodatos.database");
