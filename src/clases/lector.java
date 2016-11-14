@@ -35,7 +35,4 @@ public class lector {
         this.descripcion = descripcion;
     }
 
-      
-    
-
 }

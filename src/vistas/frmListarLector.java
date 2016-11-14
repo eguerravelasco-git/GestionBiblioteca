@@ -13,7 +13,6 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import servicios.lectorServicios;
 
-
 public class frmListarLector extends javax.swing.JFrame {
 
     private ArrayList<lector> lstLectores;
@@ -110,7 +109,6 @@ public class frmListarLector extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        tblLectores.setColumnSelectionAllowed(false);
         jScrollPane1.setViewportView(tblLectores);
 
         btnNuevo.setText("Nuevo");
@@ -135,6 +133,11 @@ public class frmListarLector extends javax.swing.JFrame {
         });
 
         btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -210,6 +213,7 @@ public class frmListarLector extends javax.swing.JFrame {
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         int fila_seleccionada = tblLectores.getSelectedRow();
+        this.dispose();
         if (fila_seleccionada >= 0) {
             //lstLectores.this.dispose();
             frmActualizarLector vista = new frmActualizarLector();
@@ -227,7 +231,10 @@ public class frmListarLector extends javax.swing.JFrame {
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        this.dispose();
+        frmPrincipal principal = new frmPrincipal();
+        principal.setVisible(true);
+        principal.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -257,10 +264,19 @@ public class frmListarLector extends javax.swing.JFrame {
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         // TODO add your handling code here:
+        this.dispose();
         frmGuardarLector vista = new frmGuardarLector();
         vista.setVisible(true);
         vista.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnNuevoActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        frmPrincipal principal = new frmPrincipal();
+        principal.setVisible(true);
+        principal.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     public static void main(String args[]) {
 

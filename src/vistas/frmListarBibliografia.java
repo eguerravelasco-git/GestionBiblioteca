@@ -15,7 +15,6 @@ import servicios.StringToDate;
 import servicios.bibliografiaServicios;
 import servicios.personaServicios;
 
-
 public class frmListarBibliografia extends javax.swing.JFrame {
 
     private bibliografia bibliografiaSel;
@@ -277,6 +276,9 @@ public class frmListarBibliografia extends javax.swing.JFrame {
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
         this.dispose();
+        frmPrincipal principal = new frmPrincipal();
+        principal.setVisible(true);
+        principal.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
@@ -312,7 +314,7 @@ public class frmListarBibliografia extends javax.swing.JFrame {
                 frmListarBibliografia biblio = new frmListarBibliografia();
                 biblio.setVisible(true);
                 biblio.setLocationRelativeTo(null);
-                
+
             }
         });
     }

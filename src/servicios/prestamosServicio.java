@@ -18,7 +18,7 @@ public class prestamosServicio {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "INSERT INTO public.prestamos(id_persona,id_bibliografia,fecha_retiro,devolucion,observaciones) VALUES(?,?,?,?,?)";
+            String sql = "select * from public.f_insert_prestamos(?,?,?,?,?)";
             lstP.add(new Parametro(1, prestamos.getIdPersona().getIdPersona()));
             lstP.add(new Parametro(2, prestamos.getIdBibliografia().getIdBibliografia()));
             lstP.add(new Parametro(3, prestamos.getFecha_retiro()));
@@ -39,13 +39,35 @@ public class prestamosServicio {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "UPDATE public.prestamos SET id_persona=?, SET id_bibliografia=?, SET fecha_retiro=?, SET devolucion=?, SET observaciones=? WHERE id_prestamos=?";
-            lstP.add(new Parametro(1, prestamos.getIdPersona().getIdPersona()));
-            lstP.add(new Parametro(2, prestamos.getIdBibliografia().getIdBibliografia()));
-            lstP.add(new Parametro(3, prestamos.getFecha_retiro()));
-            lstP.add(new Parametro(4, prestamos.isDevolucion()));
-            lstP.add(new Parametro(5, prestamos.getObservaciones()));
-            lstP.add(new Parametro(6, prestamos.getIdPrestamos()));
+            String sql = "select * from public.f_update_prestamos(?,?,?,?,?,?)";
+            lstP.add(new Parametro(1, prestamos.getIdPrestamos()));
+            lstP.add(new Parametro(2, prestamos.getIdPersona().getIdPersona()));
+            lstP.add(new Parametro(3, prestamos.getIdBibliografia().getIdBibliografia()));
+            lstP.add(new Parametro(4, prestamos.getFecha_retiro()));
+            lstP.add(new Parametro(5, prestamos.isDevolucion()));
+            lstP.add(new Parametro(6, prestamos.getObservaciones()));
+            
+
+            ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
+            while (rs.next()) {
+                if (rs.getString(0).equals("true"));
+                eje = true;
+            }
+        } catch (SQLException exConec) {
+            throw new Exception(exConec.getMessage());
+        }
+        return eje;
+    }
+    
+    public static boolean actualizar1(prestamos prestamos) throws Exception {
+        boolean eje = false;
+        try {
+            ArrayList<Parametro> lstP = new ArrayList<Parametro>();
+            String sql = "select * from public.f_update_prestamos_algunos(?,?,?)";
+            lstP.add(new Parametro(1, prestamos.getIdPrestamos()));
+            lstP.add(new Parametro(2, prestamos.isDevolucion()));
+            lstP.add(new Parametro(3, prestamos.getObservaciones()));
+            
 
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {
@@ -62,7 +84,7 @@ public class prestamosServicio {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "DELETE FROM public.prestamos WHERE id_prestamos=?";
+            String sql = "select * from public.f_delete_prestamos(?)";
             lstP.add(new Parametro(1, prestamos.getIdPrestamos()));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {
@@ -80,9 +102,9 @@ public class prestamosServicio {
        prestamos Prestamos = null;
         try {
             while (rs.next()) {
-                Prestamos = new prestamos(rs.getInt("id_prestamos"),personaServicios.obtenerPersonaDadoCodigo(rs.getInt("id_persona")),
-                        bibliografiaServicios.obtenerBibliografiaDadoCodigo(rs.getInt("id_bibliografia")), rs.getDate("fecha_retiro"),
-                        rs.getBoolean("devolucion"), rs.getString("observaciones"));
+                Prestamos = new prestamos(rs.getInt("pid_prestamos"),personaServicios.obtenerPersonaDadoCodigo(rs.getInt("pid_persona")),
+                        bibliografiaServicios.obtenerBibliografiaDadoCodigo(rs.getInt("pid_bibliografia")), rs.getDate("pfecha_retiro"),
+                        rs.getBoolean("pdevolucion"), rs.getString("pobservaciones"));
                 lst.add(Prestamos);
             }
         } catch (Exception e) {
@@ -95,7 +117,7 @@ public class prestamosServicio {
     public static ArrayList<prestamos> obtenerTodos() throws Exception {
         ArrayList<prestamos> lst = new ArrayList<prestamos>();
         try {
-            String sql = "SELECT id_prestamos,id_persona,id_bibliografia,fecha_retiro,devolucion,observaciones FROM public.prestamos ORDER BY id_prestamos";
+            String sql = "select * from public.f_select_prestamos()";
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql);
             lst = llenarPrestamos(rs);
             rs = null;
@@ -108,7 +130,7 @@ public class prestamosServicio {
     public static prestamos obtenerPrestamosDadoCodigo(int codigo) throws Exception {
         prestamos objPersona = new prestamos();
         try {
-            String sql = "SELECT id_prestamos,id_persona,id_bibliografia,fecha_retiro,devolucion,observaciones FROM public.prestamos WHERE id_prestamos = ?";
+            String sql = "select * from public.f_select_prestamos_dado_id(?)";
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
             lstP.add(new Parametro(1, codigo));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);

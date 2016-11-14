@@ -95,15 +95,16 @@ public class frmGuardarPrestamo extends javax.swing.JFrame {
     public void insertarPrestamo() {
         int item_personaseleccionado = cbLector.getSelectedIndex();
         int item_bibliografiaseleccionado = cbBibliografia.getSelectedIndex();
-        boolean estado=true;
+        boolean estado=false;
         java.util.Date fecha = new Date();
         //String fechaTxt=StringToDate.devolverFechaString(fecha);
+        
         try {
             this.bibliografiaSel = lstBibliografia.get(item_bibliografiaseleccionado);
             this.personaSel = lstPersonas.get(item_personaseleccionado);
             objPrestamo.setIdPersona(personaServicios.obtenerPersonaDadoCodigo(personaSel.getIdPersona()));
             objPrestamo.setIdBibliografia(bibliografiaServicios.obtenerBibliografiaDadoCodigo(bibliografiaSel.getIdBibliografia()));
-            objPrestamo.setFecha_retiro(fecha);
+            objPrestamo.setFecha_retiro(StringToDate.devolverFecha(fecha));
             objPrestamo.setDevolucion(estado);
             objPrestamo.setObservaciones(txtObservaciones.getText());
            
@@ -291,7 +292,7 @@ public class frmGuardarPrestamo extends javax.swing.JFrame {
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
 
         this.dispose();
-        frmListarBibliografia vista = new frmListarBibliografia();
+        frmListarPrestamos vista = new frmListarPrestamos();
         vista.setVisible(true);
         vista.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnRegresarActionPerformed

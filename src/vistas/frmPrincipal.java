@@ -5,7 +5,6 @@
  */
 package vistas;
 
-
 public class frmPrincipal extends javax.swing.JFrame {
 
     /**
@@ -24,99 +23,187 @@ public class frmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        menuPrincipal = new javax.swing.JMenuBar();
-        menArchivo = new javax.swing.JMenu();
-        menSalir = new javax.swing.JMenuItem();
-        menGestion = new javax.swing.JMenu();
-        menBibliografia = new javax.swing.JMenuItem();
-        menLector = new javax.swing.JMenuItem();
-        menTBibliografia = new javax.swing.JMenuItem();
-        menTLector = new javax.swing.JMenuItem();
-        menPrestamos = new javax.swing.JMenu();
-        menAcercaDe = new javax.swing.JMenu();
+        pnlPrincipal = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        btnLectores = new javax.swing.JButton();
+        btnTBiobliografia = new javax.swing.JButton();
+        btnTLector = new javax.swing.JButton();
+        btnPrestamos = new javax.swing.JButton();
+        btnBibliografia = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1280, 700));
 
-        menArchivo.setText("Archivo");
+        pnlPrincipal.setBackground(new java.awt.Color(102, 204, 255));
 
-        menSalir.setText("Salir");
-        menSalir.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.setBackground(new java.awt.Color(153, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "OPCIONES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Game of Thrones", 0, 11))); // NOI18N
+
+        btnLectores.setText("LECTORES");
+        btnLectores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menSalirActionPerformed(evt);
+                btnLectoresActionPerformed(evt);
             }
         });
-        menArchivo.add(menSalir);
 
-        menuPrincipal.add(menArchivo);
-
-        menGestion.setText("Gestión");
-
-        menBibliografia.setText("Bibliografía");
-        menBibliografia.addActionListener(new java.awt.event.ActionListener() {
+        btnTBiobliografia.setText("TIPO BIBLIOGRAFIA");
+        btnTBiobliografia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menBibliografiaActionPerformed(evt);
+                btnTBiobliografiaActionPerformed(evt);
             }
         });
-        menGestion.add(menBibliografia);
 
-        menLector.setText("Lector");
-        menLector.addActionListener(new java.awt.event.ActionListener() {
+        btnTLector.setText("TIPO LECTORES");
+        btnTLector.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menLectorActionPerformed(evt);
+                btnTLectorActionPerformed(evt);
             }
         });
-        menGestion.add(menLector);
 
-        menTBibliografia.setText("Tipo Bibliografía");
-        menGestion.add(menTBibliografia);
+        btnPrestamos.setText("PRESTAMOS");
+        btnPrestamos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrestamosActionPerformed(evt);
+            }
+        });
 
-        menTLector.setText("Tipo Lector");
-        menGestion.add(menTLector);
+        btnBibliografia.setText("BIBLIOGRAFIA");
+        btnBibliografia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBibliografiaActionPerformed(evt);
+            }
+        });
 
-        menuPrincipal.add(menGestion);
+        btnSalir.setText("SALIR");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
-        menPrestamos.setText("Prestamos");
-        menuPrincipal.add(menPrestamos);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnTBiobliografia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBibliografia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnTLector, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLectores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPrestamos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 9, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnTBiobliografia)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnBibliografia)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnTLector)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLectores)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnPrestamos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSalir))
+        );
 
-        menAcercaDe.setText("Acerca de");
-        menuPrincipal.add(menAcercaDe);
+        jTextPane1.setBackground(new java.awt.Color(153, 255, 255));
+        jTextPane1.setFont(new java.awt.Font("Game of Thrones", 0, 36)); // NOI18N
+        jTextPane1.setText("GESTION DE BIBLIOTECA");
+        jScrollPane1.setViewportView(jTextPane1);
 
-        setJMenuBar(menuPrincipal);
+        javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);
+        pnlPrincipal.setLayout(pnlPrincipalLayout);
+        pnlPrincipalLayout.setHorizontalGroup(
+            pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        pnlPrincipalLayout.setVerticalGroup(
+            pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPrincipalLayout.createSequentialGroup()
+                .addGap(136, 136, 136)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(146, Short.MAX_VALUE))
+            .addGroup(pnlPrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
+            .addComponent(pnlPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnlPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void menSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menSalirActionPerformed
+    private void btnTBiobliografiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTBiobliografiaActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_menSalirActionPerformed
+        this.dispose();
+        frmListarTipoBibliografia tBibliografia = new frmListarTipoBibliografia();
+        tBibliografia.setVisible(true);
+        tBibliografia.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnTBiobliografiaActionPerformed
 
-    private void menBibliografiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menBibliografiaActionPerformed
+    private void btnBibliografiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBibliografiaActionPerformed
         // TODO add your handling code here:
+        this.dispose();
         frmListarBibliografia biblio = new frmListarBibliografia();
         biblio.setVisible(true);
         biblio.setLocationRelativeTo(null);
-    }//GEN-LAST:event_menBibliografiaActionPerformed
+    }//GEN-LAST:event_btnBibliografiaActionPerformed
 
-    private void menLectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menLectorActionPerformed
+    private void btnTLectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTLectorActionPerformed
         // TODO add your handling code here:
-        frmListarPersonas frmpersonas =new frmListarPersonas();
-        frmpersonas.setVisible(true);
-        frmpersonas.setLocationRelativeTo(null);
-    }//GEN-LAST:event_menLectorActionPerformed
+        this.dispose();
+        frmListarLector lector = new frmListarLector();
+        lector.setVisible(true);
+        lector.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnTLectorActionPerformed
+
+    private void btnLectoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLectoresActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        frmListarPersonas persona = new frmListarPersonas();
+        persona.setVisible(true);
+        persona.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnLectoresActionPerformed
+
+    private void btnPrestamosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrestamosActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        frmListarPrestamos v = new frmListarPrestamos();
+        v.setVisible(true);
+        v.setLocationRelativeTo(null);
+
+    }//GEN-LAST:event_btnPrestamosActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,15 +243,15 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu menAcercaDe;
-    private javax.swing.JMenu menArchivo;
-    private javax.swing.JMenuItem menBibliografia;
-    private javax.swing.JMenu menGestion;
-    private javax.swing.JMenuItem menLector;
-    private javax.swing.JMenu menPrestamos;
-    private javax.swing.JMenuItem menSalir;
-    private javax.swing.JMenuItem menTBibliografia;
-    private javax.swing.JMenuItem menTLector;
-    private javax.swing.JMenuBar menuPrincipal;
+    private javax.swing.JButton btnBibliografia;
+    private javax.swing.JButton btnLectores;
+    private javax.swing.JButton btnPrestamos;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnTBiobliografia;
+    private javax.swing.JButton btnTLector;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JPanel pnlPrincipal;
     // End of variables declaration//GEN-END:variables
 }

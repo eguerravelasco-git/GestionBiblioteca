@@ -284,11 +284,18 @@ public class frmListarPersonas extends javax.swing.JFrame {
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        frmPrincipal principal = new frmPrincipal();
+        principal.setVisible(true);
+        principal.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        this.dispose();
+        frmPrincipal principal = new frmPrincipal();
+        principal.setVisible(true);
+        principal.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
